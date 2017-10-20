@@ -10,8 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class SqlFrienddata extends SQLiteOpenHelper {
-    private final static String DATABASE_NAME="sys";
-    private final static int DATABASE_VERSION=2;
+    private final static String DATABASE_NAME="syss";
+    private final static int DATABASE_VERSION=3;
     //好友信息数据库
     public final static String USER_ID="_id";
     public static String Friend_Name="friendname";
