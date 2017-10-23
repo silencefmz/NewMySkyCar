@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@mipmap/bg64">
+
+        <ImageView
+            android:id="@+id/mYibaojiaReturn"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="天车承运人物流信息平台"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="110px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/mYibaojiaEditText"
+            android:layout_gravity="center"
+            android:layout_marginLeft="124px"
+            android:layout_width="400px"
+            android:layout_height="90px"
+            android:ems="4"
+            android:inputType="textPersonName"
+            android:hint="请输入要搜索的名字"
+            android:background="@drawable/editsharp"/>
+
+        <Button
+            android:layout_marginLeft="20px"
+            android:id="@+id/mYibaojiaButton"
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:layout_gravity="center"
+            android:background="@drawable/login_bg"
+            android:text="搜索" />
+
+    </LinearLayout>
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/rLayoutListView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</LinearLayout>

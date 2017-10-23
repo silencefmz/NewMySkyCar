@@ -78,8 +78,8 @@ public class MainShouyeActivity extends AutoLayoutActivity {
         mTabLayout.addTab(mTabLayout.newTab().setText(mListTitle.get(3)));
         mTheMainAdapter = new TheMainAdapter(getSupportFragmentManager(), mListFragment, mListTitle);
         mViewPager.setAdapter(mTheMainAdapter);
-        //mFragment = getIntent().getExtras().getInt("Fragment");
-        //mViewPager.setCurrentItem(mFragment);
+        mFragment = getIntent().getExtras().getInt("Fragment");
+        mViewPager.setCurrentItem(mFragment);
         mTabLayout.setupWithViewPager(mViewPager);
         setupTabIcons();
     }

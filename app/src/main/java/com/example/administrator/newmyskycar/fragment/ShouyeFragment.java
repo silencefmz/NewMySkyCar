@@ -10,7 +10,14 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
+import com.example.administrator.newmyskycar.MainActivity;
+import com.example.administrator.newmyskycar.MainShouyeActivity;
+import com.example.administrator.newmyskycar.Maindaibaojia;
 import com.example.administrator.newmyskycar.R;
+import com.example.administrator.newmyskycar.XiangguanzixunActivity;
+import com.example.administrator.newmyskycar.YibaojiaActivity;
+
 /**
  * Created by Administrator on 2017-10-10 0010.
  */
@@ -35,6 +42,7 @@ public class ShouyeFragment extends Fragment implements View.OnClickListener,Vie
         yibaojia.setOnTouchListener(this);
         xiangguanzixun.setOnTouchListener(this);
         yizhongbiao.setOnClickListener(this);
+        xiangguanzixun.setOnClickListener(this);
         return view;
     }
 
@@ -42,19 +50,25 @@ public class ShouyeFragment extends Fragment implements View.OnClickListener,Vie
     public void onClick(View view) {
         Intent intent = new Intent();
         if(view.getId()==R.id.daibaojia){
-            //intent.setClass(Mainzhuye.this, Maindaibaojia.class);
+            intent.setClass(getActivity(), Maindaibaojia.class);
             //转向添加页面
+            getActivity().startActivity(intent);
             getActivity().finish();
-            startActivity(intent);
         }
         else if(view.getId()==R.id.yibaojia){
-            //intent.setClass(Mainzhuye.this, Mainyibaojia.class);
+            intent.setClass(getActivity(), YibaojiaActivity.class);
             //转向添加页面
             getActivity().finish();
             startActivity(intent);
         }
         else if(view.getId()==R.id.yizhongbiao){
-            //intent.setClass(Mainzhuye.this, Mainyundan.class);
+            intent.setClass(getActivity(), MainShouyeActivity.class);
+            intent.putExtra("Fragment",1);
+            //转向添加页面
+            getActivity().finish();
+            startActivity(intent);
+        }else if(view.getId()==R.id.xiangguanzixun){
+            intent.setClass(getActivity(), XiangguanzixunActivity.class);
             //转向添加页面
             getActivity().finish();
             startActivity(intent);

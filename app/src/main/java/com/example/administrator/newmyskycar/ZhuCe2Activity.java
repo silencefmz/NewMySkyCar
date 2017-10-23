@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.administrator.newmyskycar.MyData.MySet;
+import com.example.administrator.newmyskycar.MyData.SqlCarCargodata;
 import com.example.administrator.newmyskycar.MyData.SqlFrienddata;
 import com.example.administrator.newmyskycar.MyData.SqlMydata;
 import com.example.administrator.newmyskycar.SQLRun.Sql;
@@ -37,6 +38,7 @@ public class ZhuCe2Activity extends AutoLayoutActivity {
     CheckBox xieyi;
     private SqlMydata db;
     private SqlFrienddata db2;
+    private SqlCarCargodata db3;
     private String Zhenshixingming = "";
     private String Shenfenzhenghao = "";
     private String Suozaishengshi = "";
@@ -49,6 +51,7 @@ public class ZhuCe2Activity extends AutoLayoutActivity {
         setContentView(R.layout.linear_zhuce2);
         db = new SqlMydata(this);
         db2 = new SqlFrienddata(this);
+        db3 = new SqlCarCargodata(this);
         ButterKnife.bind(this);
     }
 
@@ -82,19 +85,45 @@ public class ZhuCe2Activity extends AutoLayoutActivity {
                     kong = false;
                 }
                 if (kong) {
-                    MySet.AppUser_id = Shenfenzhenghao;
-                    MySet.AppUser_realname = Zhenshixingming;
-                    MySet.AppUser_city = Suozaishengshi;
-                    MySet.AppUser_address = Bangongdizhi;
-                    db.setServerAddress(MySet.AppUser_name, MySet.AppUser_password, MySet.AppUser_id, MySet.AppUser_phone, MySet.AppUser_realname
-                            , MySet.AppUser_city, MySet.AppUser_address);
-                    db.close();
-                    db2.setServerAddress("付明振","18601918894","11","空闲");
-                    db2.close();
-                    Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
-                    intent.setClass(this, MainActivity.class);
-                    startActivity(intent);
-                    finish();
+                    if(dao.CheckUserid(Shenfenzhenghao)){
+                        MySet.AppUser_id = Shenfenzhenghao;
+                        MySet.AppUser_realname = Zhenshixingming;
+                        MySet.AppUser_city = Suozaishengshi;
+                        MySet.AppUser_address = Bangongdizhi;
+                        db.setServerAddress(MySet.AppUser_name, MySet.AppUser_password, MySet.AppUser_id, MySet.AppUser_phone, MySet.AppUser_realname
+                                , MySet.AppUser_city, MySet.AppUser_address);
+                        db.close();
+                        db2.setServerAddress("付明振","11011011011",Shenfenzhenghao,"空闲");
+                        dao.setFriendAddress("寇权","11211211111",Shenfenzhenghao,"空闲");
+                        dao.setFriendAddress("吕国强","12321515684",Shenfenzhenghao,"空闲");
+                        dao.setFriendAddress("李润发","15621568785",Shenfenzhenghao,"空闲");
+                        dao.setFriendAddress("李宇同","12345678998",Shenfenzhenghao,"空闲");
+                        db2.close();
+                        db3.setServerAddress(Shenfenzhenghao,"北京-南京","2017-11-17 18:00—18:30","货车 4.2米 | 1500吨","4.2米","整车","No.000001","待报价","","");
+                        db3.setServerAddress(Shenfenzhenghao,"南京-上海","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000002","待报价","","");
+                        db3.setServerAddress(Shenfenzhenghao,"上海-广东","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000003","待报价","","");
+                        db3.setServerAddress(Shenfenzhenghao,"广东-青岛","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000004","待报价","","");
+                        db3.setServerAddress(Shenfenzhenghao,"青岛-北京","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000005","待报价","","");
+
+                        db3.setServerAddress(Shenfenzhenghao,"北京-南京","2017-11-17 18:00—18:30","货车 4.2米 | 1500吨","4.2米","整车","No.000006","已中标","2000","");
+                        db3.setServerAddress(Shenfenzhenghao,"南京-上海","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000007","已中标","4000","");
+                        db3.setServerAddress(Shenfenzhenghao,"上海-广东","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000008","已中标","5000","");
+                        db3.setServerAddress(Shenfenzhenghao,"广东-青岛","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000009","已中标","3000","");
+                        db3.setServerAddress(Shenfenzhenghao,"青岛-北京","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000010","已中标","3500","");
+
+                        db3.setServerAddress(Shenfenzhenghao,"北京-南京","2017-11-17 18:00—18:30","货车 4.2米 | 1500吨","4.2米","整车","No.000011","已报价","2000","");
+                        db3.setServerAddress(Shenfenzhenghao,"南京-上海","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000012","已报价","4000","");
+                        db3.setServerAddress(Shenfenzhenghao,"上海-广东","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000013","已报价","5000","");
+                        db3.setServerAddress(Shenfenzhenghao,"广东-青岛","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000014","已报价","3000","");
+                        db3.setServerAddress(Shenfenzhenghao,"青岛-北京","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000015","已报价","3500","");
+                        db3.close();
+                        Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
+                        intent.setClass(this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }else{
+                        Toast.makeText(this, "该身份证号已注册，请重新输入", Toast.LENGTH_SHORT).show();
+                    }
                 }
                 break;
         }

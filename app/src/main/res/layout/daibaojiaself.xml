@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="110dp">
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:orientation="vertical"
+        android:layout_gravity="center_horizontal" >
+        <LinearLayout
+            android:id="@+id/ly_card_bgd"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@mipmap/button_break"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/ly_card_header"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/tv_patname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:text="测试—测试"
+                    android:layout_marginLeft="15dp"
+                    android:layout_gravity="center_vertical"
+                    android:textIsSelectable="false"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical" >
+                <TextView
+                    android:id="@+id/mCarCargoTime"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="装货时间 2015-12-10 18:00—18:30"
+                    android:layout_marginLeft="3dp"
+                    android:textIsSelectable="false"/>
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="40dp"
+                    android:gravity="center"
+                    android:layout_height="20dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/state"
+                    android:text="整车" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="中栏车 5.8米 | 2000吨"
+                    android:layout_marginLeft="3dp"
+                    android:textIsSelectable="false"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="300dp"
+                    android:layout_weight="1"
+                    android:textSize="10dp"
+                    android:text="9分钟前" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -10,8 +10,8 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 
 public class SqlCarCargodata extends SQLiteOpenHelper {
-    private final static String DATABASE_NAME="sys";
-    private final static int DATABASE_VERSION=2;
+    private final static String DATABASE_NAME="sysss";
+    private final static int DATABASE_VERSION=4;
     //车货状态数据库
     public final static String USER_ID="_id";
     public final static String CarCargo_Destination="Destination";

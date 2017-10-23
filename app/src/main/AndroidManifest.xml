@@ -25,7 +25,10 @@
         </activity>
         <activity android:name=".ZhuCeActivity" />
         <activity android:name=".ZhuCe2Activity" />
-        <activity android:name=".MainShouyeActivity"></activity>
+        <activity android:name=".MainShouyeActivity" />
+        <activity android:name=".Maindaibaojia" />
+        <activity android:name=".YibaojiaActivity" />
+        <activity android:name=".XiangguanzixunActivity"></activity>
     </application>
 
 </manifest>

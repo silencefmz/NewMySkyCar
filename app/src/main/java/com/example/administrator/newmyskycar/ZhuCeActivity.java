@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.administrator.newmyskycar.MyData.MySet;
+import com.example.administrator.newmyskycar.SQLRun.Sql;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.BindView;
@@ -28,12 +29,13 @@ public class ZhuCeActivity extends AutoLayoutActivity {
     @BindView(R.id.editText)
     EditText editText;
     @BindView(R.id.mNoPhoneText)
-    EditText mNoPhoneText;
+    EditText mNoPhoneText;;
 
     private String Yonghuming="";
     private String Mima="";
     private String Qurenmima="";
     private String Shoujihao="";
+    private Sql dao = Sql.getInstance(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,14 +74,22 @@ public class ZhuCeActivity extends AutoLayoutActivity {
                     Toast.makeText(this, "两次密码输入不相同", Toast.LENGTH_SHORT).show();
                 }
                 if (kong) {
-                    intent.setClass(this, ZhuCe2Activity.class);
-                    //Zhuce02.getInstance().setxinxi(Yonghuming,Mima,Shoujihao);
-                    MySet.AppUser_name = Yonghuming;
-                    MySet.AppUser_password = Mima;
-                    MySet.AppUser_phone = Shoujihao;
-                    //转向添加页面
-                    startActivity(intent);
-                    finish();
+                    if(Float.parseFloat(Shoujihao)>=10000000000.0&&Float.parseFloat(Shoujihao)<100000000000.0){
+                        if(dao.CheckUsername(Yonghuming)){
+                            intent.setClass(this, ZhuCe2Activity.class);
+                            //Zhuce02.getInstance().setxinxi(Yonghuming,Mima,Shoujihao);
+                            MySet.AppUser_name = Yonghuming;
+                            MySet.AppUser_password = Mima;
+                            MySet.AppUser_phone = Shoujihao;
+                            //转向添加页面
+                            startActivity(intent);
+                            finish();
+                        }
+                        else
+                            Toast.makeText(this, "用户名已存在，请重新输入", Toast.LENGTH_SHORT).show();
+                    }else
+                        Toast.makeText(this, "请输入正确的手机号", Toast.LENGTH_SHORT).show();
+
                 }
                 break;
         }

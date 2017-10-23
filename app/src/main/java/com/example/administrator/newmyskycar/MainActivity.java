@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.administrator.newmyskycar.Item.MyDataItem;
 import com.example.administrator.newmyskycar.SQLRun.Sql;
 import com.zhy.autolayout.AutoLayoutActivity;
 
@@ -43,7 +44,11 @@ public class MainActivity extends AutoLayoutActivity {
                 Integer result = dao.checkLogin(mUserName.getText().toString(), mPassWord.getText().toString());
                 if (result > 0) {
                     Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+                    MyDataItem.getInstance().setUserName(mUserName.getText().toString());
+                    MyDataItem.getInstance().setUserPassword(mPassWord.getText().toString());
+                    MyDataItem.getInstance().setUserId(dao.SeachUserID(mUserName.getText().toString(),mPassWord.getText().toString()));
                     intent.setClass(this, MainShouyeActivity.class);
+                    intent.putExtra("Fragment",0);
                     //转向添加页面
                     startActivity(intent);
                 } else {
