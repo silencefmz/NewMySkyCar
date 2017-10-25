@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@mipmap/bg64">
+
+        <ImageView
+            android:id="@+id/mXiangguanzixunReturn05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="天车承运人物流信息平台"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  传化陆鲸启动“线路运营”车货匹配服务向纵深延展" />
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="270dp"
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView12"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="          深耕干线物流O2O服务领域，深度服务卡车司机和货代。3月4日，传化陆鲸在杭州传化公路港，创新性启动“线路运营”的服务手法，并发布“杭州到上海”首条线路，在已聚合了规模化的货源和车源基础上，推动车货匹配服务向纵深化延展。" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="          纵观同行业，线路运营的手法为陆鲸首提，在解决卡车司机配货线路难以稳定、专业服务质量低问题上，具有现实意义。" />
+</LinearLayout>

@@ -2,6 +2,7 @@ package com.example.administrator.newmyskycar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
@@ -19,14 +20,16 @@ import com.example.administrator.newmyskycar.Item.MyDataItem;
 import com.example.administrator.newmyskycar.MyData.SqlCarCargodata;
 import com.example.administrator.newmyskycar.MyData.SqlFrienddata;
 import com.example.administrator.newmyskycar.SQLRun.Sql;
+import com.example.administrator.newmyskycar.utils.ProgressUtil;
 import com.zhy.autolayout.AutoLayoutActivity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Maindaibaojia extends AutoLayoutActivity implements View.OnClickListener {
+public class Maindaibaojia extends AutoLayoutActivity implements View.OnClickListener,AdapterView.OnItemClickListener{
 
     private List<String> list_mudidi = new ArrayList<String>();
     private ArrayAdapter<String> adapter_mudidi;
@@ -38,6 +41,8 @@ public class Maindaibaojia extends AutoLayoutActivity implements View.OnClickLis
     private ArrayAdapter<String> adapter_chexing;
     private Sql dao = Sql.getInstance(this);
     ListView area_list;
+    SimpleAdapter adapter;
+    List<Map<String, String>> area_Listview = new ArrayList<Map<String, String>>();
 
 
     ImageView rebreak;
@@ -64,30 +69,13 @@ public class Maindaibaojia extends AutoLayoutActivity implements View.OnClickLis
         showlist(mudidi,list_mudidi,adapter_mudidi);
         showlist(yongcheleixing,list_yongcheleixing,adapter_yongcheleixing);
         showlist(chexing,list_chexing,adapter_chexing);
-
-//        rebreak.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//                switch (motionEvent.getAction()) {
-//                    case MotionEvent.ACTION_DOWN:
-//                        rebreak
-//                                .setBackgroundResource(R.mipmap.ease_delete_expression_hei);
-//                        break;
-//                    case MotionEvent.ACTION_UP:
-//                        rebreak
-//                                .setBackgroundResource(R.mipmap.ease_delete_expression);
-//                        break;
-//                    default:
-//                        break;
-//                }
-//                return false;
-//            }
-//        });
-        SimpleAdapter adapter=new SimpleAdapter(this,getData(),R.layout.daibaojiaself,
+        area_Listview.clear();
+        area_Listview=getData();
+        adapter=new SimpleAdapter(this,area_Listview,R.layout.daibaojiaself,
                 new String[]{"tv_patname","time","textView19","weight","textView20"},
                 new int[]{R.id.tv_patname,R.id.mCarCargoTime,R.id.textView19,R.id.weight,R.id.textView20});
         area_list.setAdapter(adapter);
-
+        area_list.setOnItemClickListener(this);
     }
     private void showlist(Spinner title,List<String> list,ArrayAdapter<String> adapter){
         adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item, list);
@@ -136,11 +124,11 @@ public class Maindaibaojia extends AutoLayoutActivity implements View.OnClickLis
             startActivity(intent);
         }
     }
-    public List<Map<String,Object>> getData(){
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+    public List<Map<String,String>> getData(){
+        List<Map<String, String>> list = new ArrayList<Map<String, String>>();
         List<Map<String,String>> mListTime = dao.getcarstatusbyidandstate(MyDataItem.getInstance().getUserId(),"待报价");
         for(int i=0;i<mListTime.size();i++){
-            Map<String, Object> map = new HashMap<String, Object>();
+            Map<String, String> map = new HashMap<String, String>();
             map.put("tv_patname", mListTime.get(i).get(SqlCarCargodata.CarCargo_Destination));
             map.put("time", "送货时间 "+mListTime.get(i).get(SqlCarCargodata.CarCargo_Time));
             map.put("textView19", mListTime.get(i).get(SqlCarCargodata.CarCargo_Level));
@@ -149,5 +137,18 @@ public class Maindaibaojia extends AutoLayoutActivity implements View.OnClickLis
             list.add(map);
         }
         return list;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = new Intent();
+        intent.setClass(this, DaibaojiaSelfActivity.class);
+        intent.putExtra("MuDiDi",area_Listview.get(i).get("tv_patname"));
+        intent.putExtra("Level",area_Listview.get(i).get("textView19"));
+        intent.putExtra("Number",area_Listview.get(i).get("textView20"));
+        intent.putExtra("weight",area_Listview.get(i).get("weight"));
+        //转向添加页面
+        startActivity(intent);
+        finish();
     }
 }

@@ -43,7 +43,7 @@ public class YibaojiaActivity extends AutoLayoutActivity {
         setContentView(R.layout.linear_yibaojia);
         ButterKnife.bind(this);
         area_Listview.clear();
-        area_Listview=getData();
+        area_Listview=getData(0);
         adapter=new SimpleAdapter(this,area_Listview,R.layout.linear_yibaojiaself,
                 new String[]{"tv_patname_yibaojia","mCarCargoTime_yibaojia","textView19_yibaojia","weight_yibaojia","textView20_yibaojia","textView6_yibaojia"},
                 new int[]{R.id.tv_patname_yibaojia,R.id.mCarCargoTime_yibaojia,R.id.textView19_yibaojia,R.id.weight_yibaojia,R.id.textView20_yibaojia,R.id.textView6_yibaojia});
@@ -62,21 +62,47 @@ public class YibaojiaActivity extends AutoLayoutActivity {
                 startActivity(intent);
                 break;
             case R.id.mYibaojiaButton:
+                if(mYibaojiaEditText.getText().toString().equals("")){
+                    area_Listview.clear();
+                    area_Listview.addAll(getData(0));
+                    adapter.notifyDataSetChanged();
+                }
+                else {
+                    area_Listview.clear();
+                    area_Listview.addAll(getData(1));
+                    adapter.notifyDataSetChanged();
+                }
+
+
                 break;
         }
     }
-    public List<Map<String,Object>> getData(){
+    public List<Map<String,Object>> getData(int a){
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-        List<Map<String,String>> mListTime = dao.getcarstatusbyidandstate(MyDataItem.getInstance().getUserId(),"已报价");
-        for(int i=0;i<mListTime.size();i++){
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("tv_patname_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Destination));
-            map.put("mCarCargoTime_yibaojia", "送货时间 "+mListTime.get(i).get(SqlCarCargodata.CarCargo_Time));
-            map.put("textView19_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Level));
-            map.put("weight_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Model_car));
-            map.put("textView20_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Number));
-            map.put("textView6_yibaojia",'¥'+mListTime.get(i).get(SqlCarCargodata.CarCargo_Price));
-            list.add(map);
+        if(a==0){
+            List<Map<String,String>> mListTime = dao.getcarstatusbyidandstate(MyDataItem.getInstance().getUserId(),"已报价");
+            for(int i=0;i<mListTime.size();i++){
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("tv_patname_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Destination));
+                map.put("mCarCargoTime_yibaojia", "送货时间 "+mListTime.get(i).get(SqlCarCargodata.CarCargo_Time));
+                map.put("textView19_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Level));
+                map.put("weight_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Model_car));
+                map.put("textView20_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Number));
+                map.put("textView6_yibaojia",'¥'+mListTime.get(i).get(SqlCarCargodata.CarCargo_Price));
+                list.add(map);
+            }
+        }else if(a==1){
+            List<Map<String,String>> mListTime = dao.seachOncList(mYibaojiaEditText.getText().toString());
+            for(int i=0;i<mListTime.size();i++){
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("tv_patname_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Destination));
+                map.put("mCarCargoTime_yibaojia", "送货时间 "+mListTime.get(i).get(SqlCarCargodata.CarCargo_Time));
+                map.put("textView19_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Level));
+                map.put("weight_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Model_car));
+                map.put("textView20_yibaojia", mListTime.get(i).get(SqlCarCargodata.CarCargo_Number));
+                map.put("textView6_yibaojia",'¥'+mListTime.get(i).get(SqlCarCargodata.CarCargo_Price));
+                list.add(map);
+            }
         }
         return list;
     }

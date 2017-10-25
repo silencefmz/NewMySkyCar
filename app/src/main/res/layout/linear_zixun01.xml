@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@mipmap/bg64">
+
+        <ImageView
+            android:id="@+id/mXiangguanzixunReturn01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="天车承运人物流信息平台"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  世界银行行长金墉盛赞货车帮：车货匹配模式领先全球" />
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="270dp"
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView12"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="          金墉对货车帮取得的成绩表示了极大的赞赏，认为货车帮的车货匹配模式在全球范围具有领先性，该项商业模式及支撑商业模式的技术具备在全球推广的可行性，有机会助力“一带一路”发展战略，带动周边国家的经济进步。他期待着货车帮把这一模式向东南亚、非洲，乃至全球更广泛的地区推广，帮助这些区域提高物流行业的效率，促进各国的小微企业共同成长。" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="          货车帮的联合创始人兼CEO唐天广表示，能够赢得世界银行的青睐，是货车帮的极大荣幸。货车帮一直致力于打造公路物流的基础设施，减少能源消耗，这一点与世界银行的宗旨是一致的；能够创造及发展出领先于世界的新型商业模式，并有机会将这一商业模式向其他国家推广，货车帮感到非常骄傲；货车帮十分愿意与世界银行一起，将成熟的车货匹配模式向有需求的国家推广，提升更多国家物流行业的效率，促进更多区域的经济发展，创造更大的价值。" />
+
+</LinearLayout>

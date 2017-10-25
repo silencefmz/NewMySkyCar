@@ -2,6 +2,7 @@ package com.example.administrator.newmyskycar.fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -17,6 +18,7 @@ import com.example.administrator.newmyskycar.Maindaibaojia;
 import com.example.administrator.newmyskycar.R;
 import com.example.administrator.newmyskycar.XiangguanzixunActivity;
 import com.example.administrator.newmyskycar.YibaojiaActivity;
+import com.example.administrator.newmyskycar.utils.ProgressUtil;
 
 /**
  * Created by Administrator on 2017-10-10 0010.

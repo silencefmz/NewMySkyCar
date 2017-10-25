@@ -116,6 +116,18 @@ public class ZhuCe2Activity extends AutoLayoutActivity {
                         db3.setServerAddress(Shenfenzhenghao,"上海-广东","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000013","已报价","5000","");
                         db3.setServerAddress(Shenfenzhenghao,"广东-青岛","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000014","已报价","3000","");
                         db3.setServerAddress(Shenfenzhenghao,"青岛-北京","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000015","已报价","3500","");
+
+                        db3.setServerAddress(Shenfenzhenghao,"北京-南京","2017-11-17 18:00—18:30","货车 4.2米 | 1500吨","4.2米","整车","No.000016","运输中","2000","付XX");
+                        db3.setServerAddress(Shenfenzhenghao,"南京-上海","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000017","运输中","4000","付XX");
+                        db3.setServerAddress(Shenfenzhenghao,"上海-广东","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000018","运输中","5000","付XX");
+                        db3.setServerAddress(Shenfenzhenghao,"广东-青岛","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000019","运输中","3000","付XX");
+                        db3.setServerAddress(Shenfenzhenghao,"青岛-北京","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000020","运输中","3500","付XX");
+
+                        db3.setServerAddress(Shenfenzhenghao,"北京-南京","2017-11-17 18:00—18:30","货车 4.2米 | 1500吨","4.2米","整车","No.000021","已完成","2000","王XX");
+                        db3.setServerAddress(Shenfenzhenghao,"南京-上海","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000022","已完成","4000","王XX");
+                        db3.setServerAddress(Shenfenzhenghao,"上海-广东","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000023","已完成","5000","王XX");
+                        db3.setServerAddress(Shenfenzhenghao,"广东-青岛","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","拼车","No.000024","已完成","3000","王XX");
+                        db3.setServerAddress(Shenfenzhenghao,"青岛-北京","2017-11-17 18:00—18:30","中栏车 5.8米 | 2000吨","5.6米","整车","No.000025","已完成","3500","王XX");
                         db3.close();
                         Toast.makeText(this, "注册成功", Toast.LENGTH_LONG).show();
                         intent.setClass(this, MainActivity.class);

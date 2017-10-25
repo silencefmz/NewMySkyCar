@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_marginTop="2dp"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:descendantFocusability= "blocksDescendants">
-
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="110dp">
     <RelativeLayout
 
         android:layout_width="match_parent"
@@ -31,7 +27,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/tv_patname_yizhongbiao"
+                    android:id="@+id/tv_patname_yunshuzhong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -50,7 +46,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/mCarCargoTime_yizhongbiao"
+                    android:id="@+id/mCarCargoTime_yunshuzhong"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -59,7 +55,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/textView19_yizhongbiao"
+                    android:id="@+id/textView19_yunshuzhong"
                     android:layout_width="40dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="30dp"
@@ -77,7 +73,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/weight_yizhongbiao"
+                    android:id="@+id/weight_yunshuzhong"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
@@ -86,7 +82,7 @@
                     android:textSize="15dp" />
 
                 <TextView
-                    android:id="@+id/textView6_yizhongbiao"
+                    android:id="@+id/textView6_yunshuzhong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="130dp"
@@ -102,11 +98,18 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView20_yizhongbiao"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/textView15_yunshuzhong"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="300dp"
-                    android:layout_weight="1"
+                    android:textSize="16sp"
+                    android:text="司机：XXX" />
+
+                <TextView
+                    android:id="@+id/textView20_yunshuzhong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="200dp"
                     android:text="9分钟前"
                     android:textSize="10dp" />
 
@@ -114,39 +117,4 @@
 
         </LinearLayout>
     </RelativeLayout>
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dip"
-        android:background="#FF909090" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/button11"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:textColor="#ffffff"
-            android:textSize="16sp"
-            android:focusable = "false"
-            android:text="联系货主" />
-        <View
-            android:layout_width="1dip"
-            android:layout_height="fill_parent"
-            android:background="#FF909090" />
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:textColor="#ffffff"
-            android:textSize="16sp"
-            android:focusable = "false"
-            android:text="安排司机" />
-    </LinearLayout>
-
 </LinearLayout>

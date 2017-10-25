@@ -43,18 +43,38 @@ public class XiangguanzixunActivity extends AutoLayoutActivity {
                 intent.setClass(this, MainShouyeActivity.class);
                 intent.putExtra("Fragment",0);
                 //转向添加页面
-                finish();
                 startActivity(intent);
+                finish();
                 break;
             case R.id.textView10:
+                intent.setClass(this, Xiangguanzixun01Activity.class);
+                //转向添加页面
+                startActivity(intent);
+                finish();
                 break;
             case R.id.textView9:
+                intent.setClass(this, Xiangguanzixun02Activity.class);
+                //转向添加页面
+                startActivity(intent);
+                finish();
                 break;
             case R.id.textView8:
+                intent.setClass(this, Xiangguanzixun03Activity.class);
+                //转向添加页面
+                startActivity(intent);
+                finish();
                 break;
             case R.id.textView7:
+                intent.setClass(this, Xiangguanzixun04Activity.class);
+                //转向添加页面
+                startActivity(intent);
+                finish();
                 break;
             case R.id.textView6:
+                intent.setClass(this, Xiangguanzixun05Activity.class);
+                //转向添加页面
+                startActivity(intent);
+                finish();
                 break;
         }
     }

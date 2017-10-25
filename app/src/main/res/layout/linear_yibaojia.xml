@@ -5,27 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:background="@mipmap/bg64">
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:background="@mipmap/bg64">
 
-        <ImageView
-            android:id="@+id/mYibaojiaReturn"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="15dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:srcCompat="@mipmap/back_icon" />
+    <ImageView
+        android:id="@+id/mYibaojiaReturn"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/back_icon" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="天车承运人物流信息平台"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
-    </FrameLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="天车承运人物流信息平台"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+</FrameLayout>
     <View
         android:layout_width="fill_parent"
         android:layout_height="1dip"
@@ -44,8 +44,8 @@
             android:layout_width="400px"
             android:layout_height="90px"
             android:ems="4"
-            android:inputType="textPersonName"
-            android:hint="请输入要搜索的名字"
+            android:inputType="number"
+            android:hint="请输入要搜索的订单号"
             android:background="@drawable/editsharp"/>
 
         <Button

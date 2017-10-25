@@ -2,6 +2,7 @@ package com.example.administrator.newmyskycar;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import com.example.administrator.newmyskycar.Item.MyDataItem;
 import com.example.administrator.newmyskycar.SQLRun.Sql;
+import com.example.administrator.newmyskycar.utils.ProgressUtil;
 import com.zhy.autolayout.AutoLayoutActivity;
 
 import butterknife.BindView;
@@ -35,7 +37,6 @@ public class MainActivity extends AutoLayoutActivity {
         ButterKnife.bind(this);
 
     }
-
     @OnClick({R.id.mLogin, R.id.mHintZhuce})
     public void onViewClicked(View view) {
         Intent intent = new Intent();
@@ -44,6 +45,14 @@ public class MainActivity extends AutoLayoutActivity {
                 Integer result = dao.checkLogin(mUserName.getText().toString(), mPassWord.getText().toString());
                 if (result > 0) {
                     Toast.makeText(MainActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+
+                    ProgressUtil.showProgress(this);
+                    new Thread(){
+                        public void run(){
+                            SystemClock.sleep(3000);
+                            ProgressUtil.dismissProgress();
+                        }
+                    }.start();
                     MyDataItem.getInstance().setUserName(mUserName.getText().toString());
                     MyDataItem.getInstance().setUserPassword(mPassWord.getText().toString());
                     MyDataItem.getInstance().setUserId(dao.SeachUserID(mUserName.getText().toString(),mPassWord.getText().toString()));

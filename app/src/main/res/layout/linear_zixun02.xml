@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@mipmap/bg64">
+
+        <ImageView
+            android:id="@+id/mXiangguanzixunReturn02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            app:srcCompat="@mipmap/back_icon" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="天车承运人物流信息平台"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+    </FrameLayout>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:id="@+id/textView11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="  全国车货匹配第二大平台运满满活跃用户数飞速增长" />
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="270dp"
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:id="@+id/textView12"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="          近日在运满满与QuestMobile联合发布的《2017年上半年·移动互联网货运行业洞察》中，全国车货匹配第二大平台运满满活跃用户数飞速增长，同比增长达109%。" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:text="          查看QustMobile数据库中对移动互联网货运APP用户使用时长的大数据分析，运满满APP司机端0-9秒时长用户使用时长占比30%，货主端占比28%，而与之规模接近的另一家APP，这个数字仅有6%。看来持续保持行业第二名的运满满在培养用户使用习惯上自成方法，能使用户在9秒中之内完成打开APP、查看货源、筛选货源并联系上货源等一系列常规用户至少需几分钟完成的动作，使得运满满用户活跃度能实现持续“增长”。如此发力，运满满或能让更多用户使用时长在3秒以内，闪开闪退，继续让APP活跃度一路走高。" />
+</LinearLayout>
